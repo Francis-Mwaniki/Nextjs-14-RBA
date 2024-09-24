@@ -2,6 +2,20 @@
 
 This project is a Next.js application that implements a dashboard with role-based access control (RBAC). It includes features such as user authentication, admin panel, and role-specific access to different parts of the application.
 
+
+<!-- from public i have a image (rbac.png) show the image and how process to grant user role and access -->
+<p align="center">
+  <img src="https://res.cloudinary.com/di70f7sli/image/upload/v1727171759/user_uploads/spzbrpitphdswvdfxysz.png" alt="RBAC Process" width="100%"/>
+</p>
+
+## How it works
+
+1. Admin creates an invite for a user with a specific role.
+2. The user receives an email with a link to register.
+3. The user registers and logs in.
+4. The user can now access the application based on their role.
+
+
 ## Features
 
 - User authentication (login/logout)
@@ -75,7 +89,7 @@ BREVO_SMTP_PORT=
 BREVO_SMTP_PASSWORD=
 BREVO_SMTP_USER=
 ```
-    
+
 ### Creating the First Admin User
 
 To create the first admin user, navigate to the `/setup` route in your browser. This route is only accessible when there are no users in the database.
