@@ -2,6 +2,9 @@
 
 This project is a Next.js application that implements a dashboard with role-based access control (RBAC). It includes features such as user authentication, admin panel, and role-specific access to different parts of the application.
 
+admin credentials 
+email: francismwanik254@gmail.com
+pass: francismwanik254@gmail.com
 
 <!-- from public i have a image (rbac.png) show the image and how process to grant user role and access -->
 <p align="center">
