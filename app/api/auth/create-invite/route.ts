@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { v4 as uuidv4 } from "uuid";
 import { sendEmail } from "@/lib/email";
-
+export const dynamic = 'force-dynamic';
 export async function POST(req: Request) {
   try {
     const { email, role } = await req.json();
@@ -20,13 +20,14 @@ export async function POST(req: Request) {
       },
     });
 
+    const baseUrl = "http://localhost:3000" || "https://next-easy-rba.vercel.app";
     // Send the invite email
     await sendEmail(
       email,
       "Invitation to Join Our Platform",
       `<h1>You've been invited!</h1>
       <p>You've been invited to join our platform as a ${role}. Click the link below to register:</p>
-      <a href="${process.env.NEXT_PUBLIC_APP_URL}/register?code=${code}">Register Now</a>`
+      <a href="${baseUrl}/register?code=${code}">Register Now</a>`
     );
 
     return NextResponse.json({

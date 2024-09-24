@@ -42,7 +42,7 @@ export default function CreateInvitePage() {
         })
       }
     } catch (error: unknown) {
-          
+      console.error(error);
       toast({
         title: "Error",
         description: 'An error occurred while creating the invite',

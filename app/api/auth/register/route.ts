@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 import { sendEmail } from "@/lib/email";
-
+export const dynamic = 'force-dynamic';
 export async function POST(req: Request) {
   try {
     const { name, email, password, inviteCode } = await req.json();

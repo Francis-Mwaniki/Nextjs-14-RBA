@@ -1,7 +1,7 @@
 // pages/api/check-cookie.ts or app/api/check-cookie/route.ts
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
-
+export const dynamic = 'force-dynamic';
 import { NextRequest } from 'next/server';
 
 export async function GET(req: NextRequest) {

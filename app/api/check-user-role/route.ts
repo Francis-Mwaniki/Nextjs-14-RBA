@@ -2,7 +2,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
   import jwt from 'jsonwebtoken';
-
+  export const dynamic = 'force-dynamic';
 export async function GET(req: Request) {
   const token = req.headers.get('cookie')?.split('; ').find(row => row.startsWith('token='))?.split('=')[1];
 

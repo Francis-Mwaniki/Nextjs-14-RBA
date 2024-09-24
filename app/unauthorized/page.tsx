@@ -42,6 +42,7 @@ export default function Unauthorized() {
                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.965 7.965 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
               ></path>
             </svg>
+            <p className="text-gray-600">Redirecting to home...</p>
           </div>
         ) : (
           <button
@@ -51,6 +52,17 @@ export default function Unauthorized() {
             Go Home
           </button>
         )}
+
+        {/* other path /admin , technician, driver,  dashboard*/}
+        <div className="mt-8">
+          <p className="text-gray-600 mb-4">Or go to:</p>
+          <div className="flex flex-col space-y-4">
+            <a href="/admin" className="text-orange-500 hover:underline">Admin</a>
+            <a href="/technician" className="text-orange-500 hover:underline">Technician</a>
+            <a href="/driver" className="text-orange-500 hover:underline">Driver</a>
+            <a href="/dashboard" className="text-orange-500 hover:underline">Dashboard</a>
+          </div>
+        </div>
       </div>
     </div>
   );
