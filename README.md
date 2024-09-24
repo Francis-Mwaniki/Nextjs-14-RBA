@@ -133,6 +133,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-Francis Mwaniki - francis@mwaniki.dev
+Francis Mwaniki - francismwaniki630@gmail.com
 
-Project Link: [https://github.com/Francis-Mwaniki/next-rbac](https://github.com/Francis-Mwaniki/next-rbac)
+Project Link: [https://github.com/Francis-Mwaniki/Nextjs-14-RBA](https://github.com/Francis-Mwaniki/Nextjs-14-RBA)
