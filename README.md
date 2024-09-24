@@ -36,8 +36,8 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone git@github.com:Francis-Mwaniki/Nextjs-14-RBA.git
+   cd Nextjs-14-RBA
    ```
 
 2. Install the dependencies:
@@ -49,19 +49,13 @@ Before you begin, ensure you have met the following requirements:
    yarn install
    ```
 
-3. Set up your environment variables:
-   Create a `.env.local` file in the root directory and add the following:
-   ```
-   DATABASE_URL="your-postgresql-database-url"
-   JWT_SECRET="your-secret-key-for-jwt"
-   ```
 
-4. Set up the database:
+3. Set up the database:
    ```
    npx prisma migrate dev
    ```
 
-5. (Optional) Seed the database with initial data:
+4. (Optional) Seed the database with initial data:
    ```
    npx prisma db seed
    ```
