@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { useToast } from "@/hooks/use-toast"
+import { toast } from 'react-hot-toast'
 import { Loader2 } from "lucide-react"
 
 export default function LoginPage() {
@@ -13,18 +13,15 @@ export default function LoginPage() {
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
-  const { toast } = useToast()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
     // Basic client-side validation
     if (!email || !password) {
-      toast({
-        title: "Validation Error",
-        description: "Please enter both email and password.",
-        variant: "destructive",
-      })
+      toast(
+         "Validation Error"
+        )
       return
     }
   
@@ -40,26 +37,16 @@ export default function LoginPage() {
       const data = await response.json()
       console.log("Login response:", data);
       if (data.status === 200) {
-        toast({
-          title: "Login Successful",
-          description: "You have been successfully logged in.",
-        });
+        toast.success("Login Successful");
         router.push('/dashboard');
       } else {
-        toast({
-          title: "Login Failed",
-          description: data.message || 'An error occurred during login',
-          variant: "destructive",
-        });
+        toast(
+         "Login Failed");
       }
       
     } catch (error) {
       console.error('Login error:', error);
-      toast({
-        title: "Login Error",
-        description: 'An unexpected error occurred. Please try again.',
-        variant: "destructive",
-      })
+      toast("Login Error")
     } finally {
       setIsLoading(false)
     }

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { useToast } from "@/hooks/use-toast"
+import { toast } from 'react-hot-toast'
 import { Loader2 } from "lucide-react"
 
 export default function RegisterPage() {
@@ -15,39 +15,22 @@ export default function RegisterPage() {
   const [inviteCode, setInviteCode] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
-  const { toast } = useToast()
 
   const validateForm = () => {
     if (!name.trim()) {
-      toast({
-        title: "Validation Error",
-        description: "Please enter your name.",
-        variant: "destructive",
-      })
-      return false
+      toast("Validation Error")
+          return false
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      toast({
-        title: "Validation Error",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      })
+      toast("Validation Error")
       return false
     }
     if (password.length < 8) {
-      toast({
-        title: "Validation Error",
-        description: "Password must be at least 8 characters long.",
-        variant: "destructive",
-      })
-      return false
+      toast("Validation Error")
+          return false
     }
     if (!inviteCode.trim()) {
-      toast({
-        title: "Validation Error",
-        description: "Please enter an invite code.",
-        variant: "destructive",
-      })
+      toast("Validation Error")
       return false
     }
     return true
@@ -66,28 +49,18 @@ export default function RegisterPage() {
         body: JSON.stringify({ name, email, password, inviteCode }),
       })
 
+
       const data = await response.json()
 
       if (data.status === 200) {
-        toast({
-          title: "Registration Successful",
-          description: "You have been successfully registered.",
-        });
+          toast("Registration Successful")
         router.push('/login');
       } else {
-        toast({
-          title: "Registration Failed",
-          description: data.message || 'An error occurred during registration',
-          variant: "destructive",
-        });
+        toast("Registration Failed")
       }
     } catch (error) {
       console.error('Registration error:', error)
-      toast({
-        title: "Registration Error",
-        description: 'An unexpected error occurred. Please try again.',
-        variant: "destructive",
-      })
+      toast("Registration Error")
     } finally {
       setIsLoading(false)
     }

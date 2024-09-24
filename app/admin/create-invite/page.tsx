@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { toast } from "@/hooks/use-toast"
+import { toast } from "react-hot-toast"
 import Layout from '@/components/Layout'
 
 export default function CreateInvitePage() {
@@ -25,29 +25,18 @@ export default function CreateInvitePage() {
         body: JSON.stringify({ email, role }),
       })
 
-      const data = await response.json()
+      await response.json()
 
       if (response.ok) {
-        toast({
-          title: "Invite Created",
-          description: `Invite sent to ${email} for role: ${role}`,
-        })
+        toast("Invite Created")
         setEmail('')
         setRole('')
       } else {
-        toast({
-          title: "Error",
-          description: data.message || 'An error occurred',
-          variant: "destructive",
-        })
+        toast("Error")
       }
     } catch (error: unknown) {
       console.error(error);
-      toast({
-        title: "Error",
-        description: 'An error occurred while creating the invite',
-        variant: "destructive",
-      })
+      toast("Error")
     } finally {
       setIsLoading(false)
     }
