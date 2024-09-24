@@ -8,7 +8,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gradient-to-b from-orange-100 to-white">
       <header className="container mx-auto px-4 py-8">
         <nav className="flex justify-between items-center"> 
-          <h1 className="text-2xl font-bold text-orange-600">Mitsumi Distribution</h1>
+          <h1 className="text-2xl font-bold text-orange-600">Techies</h1>
           <div className="space-x-4">
             <Link href="/login" className="text-orange-600 hover:text-orange-800">Login</Link>
             <Button asChild>
@@ -21,10 +21,10 @@ export default function LandingPage() {
       <main className="container mx-auto px-4 py-16">
         <section className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500">
-            Welcome to Mitsumi Distribution
+            Welcome to Techies
           </h2>
           <p className="text-xl text-orange-600 mb-8">
-            The all-in-one solution for managing Mitsumi Distribution
+            The all-in-one solution for managing Techies
           </p>
           <Button size="lg" asChild>
             <Link href="/register">Get Started <ArrowRight className="ml-2" /></Link>
@@ -69,7 +69,7 @@ export default function LandingPage() {
         <section className="text-center">
           <h3 className="text-3xl font-bold mb-4 text-orange-600">Ready to get started?</h3>
           <p className="text-xl text-orange-600 mb-8">
-            Join thousands of satisfied users and take Mitsumi Distribution to the next level
+            Join thousands of satisfied users and take Techies to the next level
           </p>
           <Button size="lg" asChild>
             <Link href="/register">Sign Up Now <ArrowRight className="ml-2" /></Link>
@@ -79,7 +79,7 @@ export default function LandingPage() {
 
       <footer className="bg-orange-100 py-8">
         <div className="container mx-auto px-4 text-center text-orange-600">
-          <p>&copy; 2024 Mitsumi Distribution. All rights reserved.</p>
+          <p>&copy; 2024 Techies. All rights reserved.</p>
         </div>
       </footer>
     </div>
