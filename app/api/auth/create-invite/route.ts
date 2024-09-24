@@ -20,7 +20,11 @@ export async function POST(req: Request) {
       },
     });
 
-    const baseUrl = "http://localhost:3000" || "https://next-easy-rba.vercel.app";
+    const baseUrl =
+    process.env.NODE_ENV === 'development'
+      ? "http://localhost:3000"
+      : "https://next-easy-rba.vercel.app";
+  
     // Send the invite email
     await sendEmail(
       email,
